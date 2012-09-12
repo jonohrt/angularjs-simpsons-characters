@@ -1,0 +1,173 @@
+// ---------------------------------------------------------------------------
+// Imports
+@import 'susy';
+$total-columns  :8;
+$column-width   : 100px;
+$gutter-width   : 20px;
+$grid-padding   : $gutter-width;
+
+$show-grid-backgrounds  : false;
+@import "compass/reset";
+@import "compass";
+
+/* -------------------------------------------------------------------------*/
+$blue: #53b4e3;
+$gold: #ffde06;
+/* Layout */
+
+
+/*html {
+	overflow:none;
+}*/
+body {
+	font-family:Arial;
+	font-size:15px;
+}
+h1 {
+	font-family: 'Comic Sans MS', cursive;
+	font-size:40px;
+}
+h2 {
+	font-size:20px;
+	
+}
+
+.header {
+
+	z-index:100;
+	background-color:$gold;
+	border-top:solid 5px #52b4e3;
+	border-bottom:solid 5px #52b4e3;
+	padding:5px 40px;
+}
+.container {
+  @include container;
+  @include susy-grid-background;
+	
+
+}
+
+.wrapper {
+	position:relative;
+	overflow:hidden;
+	padding-top:20px;
+}
+.background {
+	background: #f9db45 url(/images/simpsons_characters.jpg) top center no-repeat;
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100000px;
+	@include opacity(.5);
+	z-index: -1;
+}
+
+#content {
+	@include span-columns(8);
+}
+.characters-list {
+	width:960px;
+	margin:0 auto;
+	li {
+		position:relative;
+		float:left;
+		width:300px;
+		height:300px;
+		background:#eee;
+		margin:0 20px 20px 0;
+		cursor:pointer;
+		@include box-shadow(5px 5px 5px hsla(0, 0%, 0%, 0.65))
+	}
+
+	img.characterThumb {
+		
+		width:100%;
+		height:300px;
+	}
+	.title {
+		position:absolute;
+		bottom:0;
+		left:0;
+		width:280px;
+		padding:10px;
+		background-color: rgba(0, 0, 0, 0.6);
+		color:white;
+		
+	}
+	.no-img {
+		color:white;
+		background:$blue;
+		text-align:center;
+		height:300px;
+		width:300px;
+	  display:table-cell; 
+	  vertical-align:middle;
+		.no-image-text {
+			font-size:35px;
+		}
+	}
+	.spinner {
+		height:300px;
+		width:280px;
+		background:url(/images/ajax-loader.gif) center center no-repeat;
+	}
+
+}
+
+a.close {
+	font-size: 1.4em;
+	position: absolute;
+	right: 15px;
+	top: 0;
+	cursor: pointer;
+	color: 
+	#6E6E6E;
+	font-weight: bold;	
+}
+.characterDetail {
+	h1 {
+		margin-bottom:20px;
+	}
+	width: 540px;
+	max-height: 300px;
+	overflow: auto;
+/*	position: absolute;
+	top: 0;
+	left: 0;*/
+/*	background: url(../images/bgDetail.png);*/
+	border-radius: 5px;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+	bottom: 0;
+	right: 0;
+/*	margin: auto;*/
+	padding: 30px;
+	
+}
+.loading {
+	background: #EEE;
+	clear: both;
+	text-align: center;
+	border: solid 1px black;
+	padding: 10px;
+	box-shadow: 0 0 20px rgba(5px, 5px, 5px, 0.7);
+	margin-bottom:20px;
+}
+#searchBar {
+	position:fixed;
+	top:0;
+	left:0;
+}
+.modal img {
+	padding: 0 10px 10px 0;
+}
+
+li {
+  height: 120px;
+  border-bottom: 1px solid gray;
+}
+
+/*#fixed {
+    height: 400px;
+    overflow: auto;
+}*/

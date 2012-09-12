@@ -1,0 +1,22 @@
+<div>
+  <div ng-hide="thumb" class="spinner"></div> 
+  <div ng-show="thumb" > 
+    <a href="#{{pageid}}" data-toggle="modal"> 
+      <img ng-src="{{thumb}}" class="characterThumb" /> 
+      <span class="title" width="300" height="300">{{title}}</span> 
+    </a> 
+  </div> 
+
+  <div id="{{pageid}}" class="modal hide fade"> 
+    <div class="modal-header"> 
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> 
+      <h3>{{title}}</h3> 
+    </div> 
+    <div class="modal-body"> 
+      <img ng-src="{{thumb}}" align="left"/> 
+      <p ng-bind-html="article">{{article}}</p> 
+    </div> 
+    <div class="modal-footer"> 
+    </div> 
+  </div> 
+</div>

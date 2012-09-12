@@ -1,0 +1,6 @@
+<div when-scrolled="loadMore()">
+  <ul class="characters-list">
+    <li ng-repeat="character in items">
+			<character-detail title="{{character.title}}" pageid="{{character.pageid}}">{{character.title}}</character-detail></li>
+  </ul>  
+</div>​
